@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Calculator___MenuStrip
@@ -19,14 +12,13 @@ namespace Calculator___MenuStrip
 
         private void menuStrip1_ItemClicked(object sender, EventArgs e)
         {
-
         }
 
         private void adunare_Click(object sender, EventArgs e)
         {
             try
             { 
-                rezultat.Text = (Convert.ToDouble(nr1.Text) + Convert.ToDouble(nr2.Text)).ToString();
+                finalResultTB.Text = (Convert.ToDouble(firstNumberTB.Text) + Convert.ToDouble(secondNumberTB.Text)).ToString();
             }
 
             catch (Exception erorr)
@@ -39,7 +31,7 @@ namespace Calculator___MenuStrip
         {
             try
             {
-                rezultat.Text = (Convert.ToDouble(nr1.Text) - Convert.ToDouble(nr2.Text)).ToString();
+                finalResultTB.Text = (Convert.ToDouble(firstNumberTB.Text) - Convert.ToDouble(secondNumberTB.Text)).ToString();
             }
 
             catch (Exception erorr)
@@ -52,7 +44,7 @@ namespace Calculator___MenuStrip
         {
             try
             {
-                rezultat.Text = (Convert.ToDouble(nr1.Text) * Convert.ToDouble(nr2.Text)).ToString();
+                finalResultTB.Text = (Convert.ToDouble(firstNumberTB.Text) * Convert.ToDouble(secondNumberTB.Text)).ToString();
             }
 
             catch (Exception erorr)
@@ -65,7 +57,7 @@ namespace Calculator___MenuStrip
         {
             try
             {
-                rezultat.Text = (Convert.ToDouble(nr1.Text) / Convert.ToDouble(nr2.Text)).ToString();
+                finalResultTB.Text = (Convert.ToDouble(firstNumberTB.Text) / Convert.ToDouble(secondNumberTB.Text)).ToString();
             }
 
             catch (Exception erorr)
@@ -78,13 +70,20 @@ namespace Calculator___MenuStrip
         {
             try
             {
-                rezultat.Text = (Convert.ToDouble(nr1.Text) % Convert.ToDouble(nr2.Text)).ToString();
+                finalResultTB.Text = (Convert.ToDouble(firstNumberTB.Text) % Convert.ToDouble(secondNumberTB.Text)).ToString();
             }
 
             catch (Exception erorr)
             {
                 MessageBox.Show("Error!", "System error! " + erorr);
             }
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            firstNumberTB.Text = "";
+            secondNumberTB.Text = "";
+            finalResultTB.Text = "";
         }
     }
 }
